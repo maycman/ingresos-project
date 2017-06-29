@@ -10,7 +10,20 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+use App\Ingreso;
+/*		Codigo Simple de rutas
 Route::get('/', function () {
-    return view('welcome');
+	$ingresos = Ingreso::all();
+    return view('administracion');
 });
+Route::get('capturar', function(){
+	return view('capturar');
+});
+Route::post('capturar', function(){
+	return "Aqui va el codigo para registrar con elloquent";
+});
+*/
+Route::get('/', 'IngresoController@index');
+Route::post('/', 'IngresoController@remove');
+Route::get('capturar', 'IngresoController@create');
+Route::post('capturar', 'IngresoController@store');
